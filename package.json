@@ -1,0 +1,9 @@
+{
+  "name": "my-project",
+  "jest": {
+    "verbose": true
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
