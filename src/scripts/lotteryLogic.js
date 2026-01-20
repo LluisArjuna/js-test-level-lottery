@@ -1,1 +1,3 @@
-// lógica de negocio
+export const playLottery = (userNum, lotteryNum) =>{
+
+}
