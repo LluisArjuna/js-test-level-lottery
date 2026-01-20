@@ -1,4 +1,4 @@
-export const playLottery = (userInput) =>{
+export const lottery = (userInput) =>{
     const lotteryInput = Math.floor(Math.random()*10) + 1;
     try {
         if (typeof(userInput) !== 'number'){
