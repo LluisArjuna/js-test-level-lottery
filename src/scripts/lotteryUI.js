@@ -1,1 +1,3 @@
-// Lógica de la UI
+export const showResult = (response) => {
+
+}
