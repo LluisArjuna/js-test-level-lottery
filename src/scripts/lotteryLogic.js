@@ -1,7 +1,7 @@
 export const lottery = (userInput) =>{
     const lotteryInput = Math.floor(Math.random()*10) + 1;
     try {
-        if (typeof(userInput) !== 'number'){
+        if (isNaN(userInput)){
             throw new Error("The value introduced is not a number!");
             
         } else if (userInput < 1 || userInput > 10) {
