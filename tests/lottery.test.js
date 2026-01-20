@@ -44,10 +44,23 @@ describe('lottery feature tests', () => {
          */
 
             // Arrange
+            let userInput = 7;
+            let expected = {
+                message: "Lose", 
+                data: {
+                    userNumber: userInput, 
+                    randomNumber: 4
+                }
+            }
 
             // Act
+            let result = lottery(userInput); 
     
             // Assert
+            expect(typeof result.data.userNumber).toBe("number");
+            expect(result).toEqual(expected);
+            expect(result.data.userNumber).not.toEqual(expected.data.randomNumber);
+            expect(result.data.result).toBe("Lose");
     
         })
 
@@ -59,6 +72,18 @@ describe('lottery feature tests', () => {
              * When el usuario intenta procesar la jugada
              * Then se muestra un mensaje de error
              */
+
+                // Arrange
+                let userInput = "Hola";
+                let expected = "The value introduced is not a number!";
+
+                // Act
+                let result = lottery(userInput); 
+        
+                // Assert
+                expect(typeof result).not.toBe("number");
+                expect(result).toEqual(expected);
+                expect(result).toBe("The value introduced is not a number!");
         })
 
         test('returns error when number is outside valid range', () => {
@@ -69,6 +94,18 @@ describe('lottery feature tests', () => {
              * When el sistema valida el número
              * Then se muestra un mensaje indicando que debe ser entre 1 y 10
              */
+
+                // Arrange
+                    let userInput = 20;
+                    let expected = "You must introduce a number between 1 and 10";
+
+                    // Act
+                    let result = lottery(userInput); 
+            
+                    // Assert
+                    expect(typeof result).not.toBe("number");
+                    expect(result).toEqual(expected);
+                    expect(result).toBe("You must introduce a number between 1 and 10");
         })
     }
 )
