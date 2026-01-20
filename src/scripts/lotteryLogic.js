@@ -1,4 +1,4 @@
-export const playLottery = (userInput, lotteryNum) =>{
+export const playLottery = (userInput, lotteryInput) =>{
     try {
         if (typeof(userInput) !== 'number'){
             throw new Error("The value introduced is not a number!");
@@ -7,13 +7,13 @@ export const playLottery = (userInput, lotteryNum) =>{
             throw new Error("You must introduce a number between 1 and 10");
         }
 
-        const answer = userInput === lotteryNum ? 'Win' : 'Lose';
+        const answer = userInput === lotteryInput ? 'Win' : 'Lose';
 
         return {
             message: answer, 
             data: {
                 userNumber: userInput, 
-  		        randomNumber: lotteryNum 
+  		        randomNumber: lotteryInput 
             }
         }
         
