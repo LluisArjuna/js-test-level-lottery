@@ -1,4 +1,5 @@
-export const playLottery = (userInput, lotteryInput) =>{
+export const playLottery = (userInput) =>{
+    const lotteryInput = Math.floor(Math.random()*10) + 1;
     try {
         if (typeof(userInput) !== 'number'){
             throw new Error("The value introduced is not a number!");
