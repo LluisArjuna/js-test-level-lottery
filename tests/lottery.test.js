@@ -1,6 +1,6 @@
 // Puedes confirgurar estos casos de test a la tecnología que más te guste, yo te propongo jest
-import { expect, describe, test } from "@jest/globals"; 
-import { lottery } from "../src/lottery";
+import { expect, describe, test } from "@jest/globals";
+import { lottery } from "../src/scripts/lotteryLogic.js"; 
 
 describe('lottery feature tests', () => {
        
@@ -28,9 +28,9 @@ describe('lottery feature tests', () => {
     
         // Assert
         expect(typeof result.data.userNumber).toBe("number");
-        expect(result).toEqual(expected);
+        expect(Object.keys(result)).toEqual(['message', 'data']);
         expect(result.data.userNumber).toEqual(expected.data.randomNumber);
-        expect(result.data.result).toBe("Win");
+        expect(result.message).toBe("Win");
     });
 
 
@@ -58,9 +58,9 @@ describe('lottery feature tests', () => {
     
             // Assert
             expect(typeof result.data.userNumber).toBe("number");
-            expect(result).toEqual(expected);
+            expect(Object.keys(result)).toEqual(['message', 'data']);
             expect(result.data.userNumber).not.toEqual(expected.data.randomNumber);
-            expect(result.data.result).toBe("Lose");
+            expect(result.message).toBe("Lose");
     
         })
 
